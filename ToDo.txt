@@ -1,3 +1,1 @@
-- DEPLOY SMART CONTRACT ON NETWORK (Complete Deploy.js)
-- THEN Complete farm.js
-- Error in compile.js temp solved
+-- web3.js export statement video 6
