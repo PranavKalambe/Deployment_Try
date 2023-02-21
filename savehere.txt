@@ -1,0 +1,15 @@
+Account1 : 0x8C0D95D7Ca6Ba92B68Af7A2aC82F0A2A6a06DA22
+password : 1234567
+
+Acc2 - 0x3b928aB5F9f1A1b9ce722a037ed6Db1bA32C2D20
+password - 1234567
+
+
+enode://347427734634c2ae6bb96efc2fd7971252bdcda8991e906ba55a593e0a6999937db22e7301ef47877e8df279723e1b5aa52b2fb0ed2fde29c8e5220290cb3572@127.0.0.1:0?discport=8009
+
+
+geth --nodiscover --syncmode full -verbosity 6 --ipcdisable --port 30303 --bootnodes enode://347427734634c2ae6bb96efc2fd7971252bdcda8991e906ba55a593e0a6999937db22e7301ef47877e8df279723e1b5aa52b2fb0ed2fde29c8e5220290cb3572@127.0.0.1:0?discport=8009 --networkid 14333 -unlock 0x3b928aB5F9f1A1b9ce722a037ed6Db1bA32C2D20 --password C:\Users\Student\Documents\myblockchain\blkchain2\data\password.txt --mine
+
+
+
+geth --nodiscover --syncmode full -verbosity 6 --ipcdisable --port 30303 --bootnodes enode://347427734634c2ae6bb96efc2fd7971252bdcda8991e906ba55a593e0a6999937db22e7301ef47877e8df279723e1b5aa52b2fb0ed2fde29c8e5220290cb3572@127.0.0.1:0?discport=8009 --networkid 14333 -unlock 0x8C0D95D7Ca6Ba92B68Af7A2aC82F0A2A6a06DA22--password C:\Users\Student\Documents\myblockchain\blkchain1\data\password.txt --mine

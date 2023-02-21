@@ -18,7 +18,7 @@ contract FarmData{
     
     mapping(address=>mapping(bytes32=>Data)) sensorData;  //matrix of all sensorData
     mapping(address=>bytes32[]) dataIdArray;                //of each snesor
-    // 0x7072616e6176, 100, 0x313030, 1676877601, 0x636f6c6c656765, 0xb84384b29a152E5c69b585304bb0C9D7F9091ccb
+
     function sendSensorDataTo(bytes32 data_id, uint dataPoints, bytes32 dataHash, uint timestamp, bytes32 location, address addr) public{
         
         dataIdArray[msg.sender].push(data_id);
