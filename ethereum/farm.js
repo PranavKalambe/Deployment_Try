@@ -5,29 +5,10 @@ const web3 = require('./web3')
 const fs = require("fs")
 const ABI = JSON.parse(fs.readFileSync("contracts/build/FarmData_sol_FarmData.abi"))
 
-// take input of deplyed contract address
-// import readline module
-const readline = require("readline");
-
-// create interface for input and output
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-
-// create empty user input
-let addr = "";
-rl.question("Enter Deployed Contract Address\n", function (string) {
-    addr = string;
-
-    // close input stream
-    rl.close();
-  });
-
 
 const instance = new web3.eth.Contract(
     ABI,
-    "0x0f8f9ea05Ad9A0a10b7263779D837B2ef0B3AE56"
+    "0x4d4D9aCD46df8064Cf1312bA58f5f248A5E4E2Bd"
 );
 
 module.exports =  instance;
