@@ -8,6 +8,6 @@ const ABI = JSON.parse(fs.readFileSync("contracts/build/FarmData_sol_FarmData.ab
 
 const instance = new web3.eth.Contract(
     ABI,
-    "0xe26955808a8304597241FB204f06348fEC830a55"
+    "0x60322e993fc8141982813dB13C4497207C611c0c"
 );
 module.exports =  instance;

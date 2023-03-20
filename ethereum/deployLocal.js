@@ -11,29 +11,37 @@ const Web3 = require('web3')
 
 
 const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8042"));
+// const web3 = new Web3(new Web3.providers.IpcProvider("//./pipe/geth.ipc"));
 
 
 
 let accounts;
+let deployContract;
+let password = '1234';
 
 async function deploy(){
     accounts =  await web3.eth.getAccounts();
-    let farmContract =  new web3.eth.Contract(ABI);
-    farmContract = farmContract.deploy({data: bytecode});
-    console.log("Hello");
+    // let farmContract =  new web3.eth.Contract(ABI);
+    // farmContract = farmContract.deploy({data: bytecode});
+    console.log("Unlocking Account ", accounts[0]);
+    await web3.eth.personal.unlockAccount(accounts[0],password,0)
+    
+    // deployContract = await farmContract.send({
+    //     from: accounts[0],
+    //     gas: 1000000
+    // });
 
-    try{
-        const deployContract = await farmContract.send({
-            from: accounts[0],
-            gas: 8000000
-        });
-        console.log("Deployed Contract Address: ", deployContract.options.address);
-    }
-    catch(err){
-        console.error("Error Deploying contract".err);
-    }
+    // try{
+    //     const deployContract = await farmContract.send({
+    //         from: accounts[0],
+    //         gas: 8000000
+    //     });
+    //     console.log("Deployed Contract Address: ", deployContract.options.address);
+    // }
+    // catch(err){
+    //     console.error("Error Deploying contract".err);
+    // }
 
-   
 } 
 
 deploy()
