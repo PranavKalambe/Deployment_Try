@@ -7,4 +7,18 @@ SET2: 2 200
 SET2: 0x3200000000000000000000000000000000000000000000000000000000000000, 200, 0x3230300000000000000000000000000000000000000000000000000000000000, 1676965500, 0x70756e6500000000000000000000000000000000000000000000000000000000, 0xe98Ba1D6fb97ecAFC44d7d8964a590c7dAf0a56D
 
 
-Deployed Contract Address:  0x0f8f9ea05Ad9A0a10b7263779D837B2ef0B3AE56
+Deployed Contract Address: 
+
+Commands:
+
+geth --datadir blkchain1 init genesis.json
+
+geth --identity "localB" --http --http.addr "172.17.22.51" --http.port 8042 --http.corsdomain "*" --http.api "db,eth,net,web3" --datadir blkchain1 --port "30303" --nodiscover --networkid 1999 console --allow-insecure-unlock
+
+geth --identity "localB" --http --http.addr "172.17.22.51" --http.port 8043 --http.corsdomain "*" --http.api "db,eth,net,web3" --datadir blkchain2 --port "30304" --authrpc.port 8547 --nodiscover --networkid 1999 --ipcdisable console --allow-insecure-unlock
+
+
+
+C:\Users\Student\Documents\privateNetwork
+
+enode://902255d4691c4f2762a49ca2844e17da5e6d498b6e897365fd2f0c2818ea618dc37b2a2d498839370a7c84012026f824d3f8edb3b66d0cb8e359125194b3260e@127.0.0.1:30303?discport=0
