@@ -1,6 +1,8 @@
 // import web3 from './web3';
 const web3 = require('./web3');
 
+let smartContractAddress = "0xAcE3FAa46AB2c8d57c037D2F7e3886B4f23262DC";
+
 // import Interface or ABI of contract
 const fs = require("fs")
 const ABI = JSON.parse(fs.readFileSync("contracts/build/FarmData_sol_FarmData.abi"))
@@ -8,6 +10,6 @@ const ABI = JSON.parse(fs.readFileSync("contracts/build/FarmData_sol_FarmData.ab
 
 const instance = new web3.eth.Contract(
     ABI,
-    "0xb3945bB4065E9C415dF753e182e3f5cbBFe0080d"
+    smartContractAddress
 );
 module.exports =  instance;
