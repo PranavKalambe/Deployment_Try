@@ -21,8 +21,11 @@ geth --identity "localB" --http --http.addr "172.17.22.51" --http.port 8042 --ht
 geth --identity "localB" --http --http.port 8043 --http.corsdomain "*" --http.api "db,eth,net,web3" --datadir blkchain2 --port "30304" --authrpc.port 8547 --nodiscover --networkid 1999 --ipcdisable console --allow-insecure-unlock
 geth --identity "localB" --http --http.addr "172.17.22.51" --http.port 8043 --http.corsdomain "*" --http.api "db,eth,net,web3" --datadir blkchain2 --port "30304" --authrpc.port 8547 --nodiscover --networkid 1999 --ipcdisable console --allow-insecure-unlock
 
+geth --identity "localB" --http --http.addr "172.17.22.51" --http.port 9042 --http.corsdomain "*" --http.api "db,eth,net,web3" --datadir blkchain2 --port "30308" --authrpc.port 8542 --nodiscover --networkid 15 --ipcdisable console --allow-insecure-unlock
 
+geth --datadir blkchain1 init genesis.json
+geth --identity "localB" --http --http.addr "172.17.22.52" --http.port 9043 --http.corsdomain "*" --http.api "db,eth,net,web3" --datadir blkchain1 --port "30309" --authrpc.port 8543 --nodiscover --networkid 15 --ipcdisable console --allow-insecure-unlock
 
 C:\Users\Student\Documents\privateNetwork
 
-enode://902255d4691c4f2762a49ca2844e17da5e6d498b6e897365fd2f0c2818ea618dc37b2a2d498839370a7c84012026f824d3f8edb3b66d0cb8e359125194b3260e@127.0.0.1:30303?discport=0
+"enode://4d949096678f57a7d53203af8c0ebf85ac2083f87f746c932fca45a8c7f45dc8225ee7ecb4f6b995f9449bfba2de13729de396f1cdd8b0e97d956e7445d3d1c5@172.17.22.51:30308?discport=0"
