@@ -1,25 +1,32 @@
-//Importing Compiled Smart Contract
-const fs = require("fs")
-const ABI = JSON.parse(fs.readFileSync("contracts/build/BidData_sol_BidData.abi"))
+const fs = require("fs");
+const Web3 = require("web3");
+const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8042"));
+
+const ABI = JSON.parse(fs.readFileSync("contracts/build/BidData_sol_BidData.abi"));
+
 const bytecode = fs.readFileSync("contracts/build/BidData_sol_BidData.bin").toString();
 
-//Connecting to the network
-const ganache = require('ganache-cli');
-const Web3 = require('web3')
-//Web3 Connection
-// const web3 = new Web3(ganache.provider());
-const web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545"));
+async function deploy() {
+  
+  const accounts = await web3.eth.getAccounts();
+  console.log("Deploying using Account - ",accounts[0]);
 
+  const balance = await web3.eth.getBalance(accounts[0]);
+  const etherAmount = web3.utils.fromWei(balance, 'ether');
+  console.log("Current Balance - ", etherAmount);
 
-async function deploy(){
-    let accounts =  await web3.eth.getAccounts();
-    let farmContract =  new web3.eth.Contract(ABI);
-    farmContract = farmContract.deploy({data: bytecode});
+  const farmContract = new web3.eth.Contract(ABI);
+  
+  const deployContract = await farmContract.deploy({
+    data: bytecode,
+  }).send({ 
+    from: accounts[0],
+    gas: 1500000,
+    gasPrice: '300000000000'
+   });
+  
+  console.log(`Contract deployed at address: ${deployContract.options.address}`);
 
-    const deployContract = await farmContract.send({
-        from: accounts[0],
-        gas: 5000000
-    });
-    console.log("Deployed Contract Address: ", deployContract.options.address);
-}       
-deploy()
+}
+  
+  deploy();

@@ -1,7 +1,7 @@
 // import web3 from './web3';
 const web3 = require('./web3');
 
-let smartContractAddress = "0xa2C17e0Ea41E81D083CAFAC92AB811FFaF74d64C";
+let smartContractAddress = "0x6ED980A274e28E28dE8EF76a401e16652Ccb6d02";
 
 // import Interface or ABI of contract
 const fs = require("fs")
