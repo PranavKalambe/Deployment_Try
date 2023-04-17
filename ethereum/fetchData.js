@@ -12,7 +12,7 @@ async function getSensorData(addr){
 }
 
 // console.log("From Sensor Node1")
-let sensor1 = "0xb2467da18577c452c36abc0aa66dcdaf55e3ec01";
+let sensor1 = "0xded13661c0a1f624144d4f3b2fa7e5de894b470c";
 getSensorData(sensor1);
 
 // console.log("From Sensor Node2")

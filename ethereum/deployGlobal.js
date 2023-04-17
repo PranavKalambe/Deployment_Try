@@ -7,7 +7,7 @@ const ABI = JSON.parse(fs.readFileSync("contracts/build/BidData_sol_BidData.abi"
 const bytecode = fs.readFileSync("contracts/build/BidData_sol_BidData.bin").toString();
 
 async function deploy() {
-  
+
   const accounts = await web3.eth.getAccounts();
   console.log("Deploying using Account - ",accounts[0]);
 
@@ -16,17 +16,17 @@ async function deploy() {
   console.log("Current Balance - ", etherAmount);
 
   const farmContract = new web3.eth.Contract(ABI);
-  
+
   const deployContract = await farmContract.deploy({
     data: bytecode,
-  }).send({ 
+  }).send({
     from: accounts[0],
     gas: 1500000,
     gasPrice: '300000000000'
    });
-  
+
   console.log(`Contract deployed at address: ${deployContract.options.address}`);
 
 }
-  
+
   deploy();
