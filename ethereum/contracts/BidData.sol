@@ -43,6 +43,11 @@ contract BidData{
         }
     }
 
+    modifier onlyDataOwner(bytes32 data_id) {
+        require(data[data_id].owner == msg.sender, "You are not the owner of this data");
+        _;
+    }
+
     function bid(bytes32 data_id) public payable{
         if(data[data_id].bidOpen) {
             address  oldBidder = data[data_id].bidder;
@@ -67,7 +72,7 @@ contract BidData{
         return data[data_id].bid;
     }
 
-    function closeBid(bytes32 data_id) public {
+    function closeBid(bytes32 data_id) public onlyDataOwner(data_id) {
         //check condition
         if(msg.sender == data[data_id].farmManager) {   //msg.sender is the owner
             payable(msg.sender).transfer(data[data_id].bid);     //Transfer money from smart contract to FM ---> _to.transfer(msg.value) // Fixed error
@@ -110,7 +115,7 @@ contract BidData{
         return (d.id, d.sensor, d.dataHash, d.location, d.bid, d.timestamp, d.farmManager,d.bidder,d.bidOpen );
     }
 
-    function getDataDetailsById(bytes32 data_id) view public returns (bytes32,address,bytes32,bytes32,uint,uint,address,address,bool){
+    function getDataDetailsById(bytes32 data_id) view public onlyDataOwner(data_id) returns (bytes32,address,bytes32,bytes32,uint,uint,address,address,bool){
         Data memory d = data[data_id];
         return (d.id, d.sensor, d.dataHash, d.location, d.bid, d.timestamp, d.farmManager,d.bidder,d.bidOpen);
     }
