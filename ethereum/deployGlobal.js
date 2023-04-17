@@ -21,7 +21,7 @@ async function deploy() {
     data: bytecode,
   }).send({
     from: accounts[0],
-    gas: 1500000,
+    gas: 2000000,
     gasPrice: '300000000000'
    });
 
