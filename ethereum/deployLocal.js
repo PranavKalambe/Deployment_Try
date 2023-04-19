@@ -1,21 +1,20 @@
 const fs = require("fs");
-const Web3 = require("web3");
-const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8042"));
+const {  web3_manager } = require('./constants');
 
-const ABI = JSON.parse(fs.readFileSync("contracts/build/farmData_sol_FarmData.abi"));
+const ABI = JSON.parse(fs.readFileSync("contracts/build/FarmData_sol_FarmData.abi"));
 
-const bytecode = fs.readFileSync("contracts/build/farmData_sol_FarmData.bin").toString();
+const bytecode = fs.readFileSync("contracts/build/FarmData_sol_FarmData.bin").toString();
 
 async function deploy() {
 
-  const accounts = await web3.eth.getAccounts();
+  const accounts = await web3_manager.eth.getAccounts();
   console.log("Deploying using Account - ",accounts[0]);
 
-  const balance = await web3.eth.getBalance(accounts[0]);
-  const etherAmount = web3.utils.fromWei(balance, 'ether');
+  const balance = await web3_manager.eth.getBalance(accounts[0]);
+  const etherAmount = web3_manager.utils.fromWei(balance, 'ether');
   console.log("Current Balance - ", etherAmount);
 
-  const farmContract = new web3.eth.Contract(ABI);
+  const farmContract = new web3_manager.eth.Contract(ABI);
 
   const deployContract = await farmContract.deploy({
     data: bytecode,

@@ -23,7 +23,7 @@ Node 2:
 Command: 
 geth --datadir blkchain2 init genesis.json
 
-geth --identity "localB" --http --http.port 8043 --http.corsdomain "*" --http.api "db,eth,net,web3" --datadir blkchain2 --port "30304" --authrpc.port 8547 --nodiscover --networkid 1999 --ipcdisable console --allow-insecure-unlock  
+geth --identity "localB" --http --http.port 8042 --http.corsdomain "*" --http.api "db,eth,net,web3" --datadir blkchain2 --port "30304" --authrpc.port 8547 --nodiscover --networkid 1999 --ipcdisable console --allow-insecure-unlock  
 
 http port: 8043
 port: "30304"
