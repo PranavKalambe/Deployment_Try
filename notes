@@ -30,3 +30,6 @@ C:\Users\Student\Documents\privateNetwork
 
 
 "enode://4d949096678f57a7d53203af8c0ebf85ac2083f87f746c932fca45a8c7f45dc8225ee7ecb4f6b995f9449bfba2de13729de396f1cdd8b0e97d956e7445d3d1c5@172.17.22.51:30308?discport=0"
+
+geth --datadir blkchain1 init genesis.json
+geth --identity "localB" --http --http.port 9041 --http.corsdomain "*" --http.api "db,eth,net,web3,personal" --datadir blkchain1 --port "30901" --authrpc.port 8548 --nodiscover --networkid 200 --ipcdisable console --allow-insecure-unlock

@@ -6,6 +6,8 @@ const { sensorNodeAddr, farmManagerAddr } = require('../constants');
 //get location from localstorage
 const location = "Mumbai";
 const prefix = location.slice(0, 3);
+//button will submit sensor identification
+let sn = 1;
 
 //recurssively run this function for 5 times to send data (emulating a sensor node that continiously sends data)
 async function sendSensorDataTo() {
@@ -54,18 +56,18 @@ function getTimestamp() {
     const time = Math.floor(Date.now() / 1000);
     return time;
 }
-//function to generate data id randomly each time its called (format- "MUMSXXX")
+//function to generate data id randomly each time its called (format- "MUMXXX")
 function generateDataId() {
     // const prefix = 'MUMS';
     const randomNum = Math.floor(Math.random() * 999) + 1;
     const paddedNum = randomNum.toString().padStart(3, '0');
-    const dataId = prefix + paddedNum;
+    const dataId = prefix + sn + paddedNum;
     return dataId.toString();
 }
 //----------------------------- call sendSensorDataTo function 5 times ------------>
 function autoSendData() {
     //send only 2 data points at a time
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i <2; i++) {
             sendSensorDataTo();
         }   
 

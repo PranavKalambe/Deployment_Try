@@ -5,7 +5,7 @@ Node 1:
 Command: 
 geth --datadir blkchain1 init genesis.json
 
-geth --identity "localB" --http --http.port 8042 --http.corsdomain "*" --http.api "db,eth,net,web3" --datadir blkchain1 --port "30303" --nodiscover --networkid 1999 console --allow-insecure-unlock  
+geth --identity "localB" --http --http.port 8041 --http.corsdomain "*" --http.api "db,eth,net,web3,personal" --datadir blkchain1 --port "30303" --nodiscover --networkid 1999 console --allow-insecure-unlock  
 
 
 IPC:   \\.\pipe\geth.ipc
@@ -17,13 +17,12 @@ password : 1234
 
 enode 1: "enode://8e06836bd4a052b25f0927adaa8ba279bb2b4046b0672727ddcba5d7d18b9467645e2cc273cf1e6c3961f7391e5115a8c8744e97de7443258304714bec845e79@127.0.0.1:30303?discport=0"
 
-
 Node 2:
 
 Command: 
 geth --datadir blkchain2 init genesis.json
 
-geth --identity "localB" --http --http.port 8042 --http.corsdomain "*" --http.api "db,eth,net,web3" --datadir blkchain2 --port "30304" --authrpc.port 8547 --nodiscover --networkid 1999 --ipcdisable console --allow-insecure-unlock  
+geth --identity "localB" --http --http.port 8042 --http.corsdomain "*" --http.api "db,eth,net,web3,personal" --datadir blkchain2 --port "30304" --authrpc.port 8547 --nodiscover --networkid 1999 --ipcdisable console --allow-insecure-unlock  
 
 http port: 8043
 port: "30304"

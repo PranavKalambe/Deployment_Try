@@ -1,4 +1,4 @@
-const {  web3_manager, smartContractAddress } = require('./constants');;
+const {  web3_manager, smartContractAddress } = require('./constants');
 
 // import Interface or ABI of contract
 const fs = require("fs")
