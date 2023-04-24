@@ -4,7 +4,7 @@ const Web3 = require('web3')
 const { sensorNodeAddr, farmManagerAddr } = require('../constants');
 
 //get location from localstorage
-const location = "Mumbai";
+const location = "Pune";
 const prefix = location.slice(0, 3);
 //button will submit sensor identification
 let sn = 1;
