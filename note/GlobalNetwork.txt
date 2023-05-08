@@ -18,13 +18,4 @@ geth --identity "localB" --http --http.addr "172.17.22.53" --http.port 9043 --ht
 "enode://08f74811360bcc6e66517b2b64fb1bc324ea332b26d4a688d932ee503d312a9a6c7b1bb7f474b92deddbf46f92a4ccb1baec127bb3545dbfb473602cec771791@172.17.22.53:30903?discport=0"
 
 
---- Details -- 
-
-MumbaiGlobal: "0x8f8495a8c17c3f27aae7e3fe9ba9661ad2ba5c6d"
-
-PuneGlobal: "0xfee9375acd5c8ff32faed8e011177a48f32049d6"
-
-SuratGloabl: "0x73650cc26b2614ae905d5ce148dfe9595ca92f7c"
-
-SmartContractGlobal: 
 

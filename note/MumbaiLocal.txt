@@ -11,13 +11,3 @@ geth --datadir sensorLocal2 init genesis.json
 
 geth --identity "localB" --http --http.port 8043 --http.corsdomain "*" --http.api "db,eth,net,web3,personal" --datadir sensorLocal2 --port "30303" --authrpc.port 8532 --nodiscover --networkid 100 --ipcdisable console --allow-insecure-unlock
 
-
--- Details --
-
-managerLocal: "0x1eb8dca855677c48ac6352dd3bb2aaab0ffe8fa3"
-
-sensorLocal: "0x6df2c4db72a6bfffd05b573d9a676460574fbd45"
-
-sensorLocal2: "0x30400a06b090f78a1930b1fbfc05f09546d9ef46"
-
-SmartContractLocal: 
